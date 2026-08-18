@@ -82,9 +82,10 @@
 
   /* Photo slideshow below college name */
   .hero-photo{
-    position:relative; max-width:640px; margin:22px auto 0; border-radius:10px; overflow:hidden;
-    aspect-ratio:16/9; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.18);
-    box-shadow:0 8px 24px rgba(0,0,0,0.25);
+    position:relative; width:100%; margin:26px 0 0; overflow:hidden;
+    height:min(60vh, 460px); min-height:260px;
+    background:rgba(255,255,255,0.06); border-top:1px solid rgba(255,255,255,0.18); border-bottom:1px solid rgba(255,255,255,0.18);
+    box-shadow:inset 0 -60px 60px -30px rgba(8,40,63,0.6);
   }
   .hero-photo .hero-slide{
     position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
@@ -340,39 +341,40 @@
   .acad-card a.acad-link{font-size:0.82rem; font-weight:700; color:var(--navy);}
 
   /* ---------- PLACEMENT / ACHIEVEMENT ---------- */
-  .placement{background:var(--navy); color:#fff;}
+  .placement{background:var(--navy); color:#fff; padding:46px 0;}
+  .placement .sec-head{margin-bottom:28px;}
   .placement .sec-eyebrow{color:var(--saffron-soft);}
-  .placement .sec-head h2{color:#fff;}
-  .placement .sec-head p{color:#C7D6E4;}
+  .placement .sec-head h2{color:#fff; font-size:clamp(1.25rem,2.2vw,1.6rem);}
+  .placement .sec-head p{color:#C7D6E4; font-size:0.86rem;}
   .placement-stats{
-    display:grid; grid-template-columns:repeat(4,1fr); gap:20px;
-    margin:0 0 50px; padding:28px 20px; background:rgba(255,255,255,0.06);
-    border:1px solid rgba(255,255,255,0.14); border-radius:12px;
+    display:grid; grid-template-columns:repeat(4,1fr); gap:14px;
+    margin:0 0 28px; padding:16px 14px; background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.14); border-radius:10px;
   }
   .stat-box{text-align:center;}
-  .stat-num{font-family:'Poppins',sans-serif; font-weight:800; font-size:2.1rem; color:var(--saffron-soft); line-height:1.1;}
-  .stat-label{font-size:0.8rem; color:#C7D6E4; margin-top:6px;}
-  .placement-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+  .stat-num{font-family:'Poppins',sans-serif; font-weight:800; font-size:1.5rem; color:var(--saffron-soft); line-height:1.1;}
+  .stat-label{font-size:0.7rem; color:#C7D6E4; margin-top:4px;}
+  .placement-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px;}
   .placement-card{
-    background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14); border-radius:10px;
-    padding:20px 16px; text-align:center;
+    background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14); border-radius:8px;
+    padding:14px 10px; text-align:center;
   }
   .placement-avatar{
-    width:72px; height:72px; border-radius:50%; object-fit:cover; margin:0 auto 12px;
+    width:48px; height:48px; border-radius:50%; object-fit:cover; margin:0 auto 8px;
     border:2px solid var(--saffron-soft); background:rgba(255,255,255,0.12);
-    display:flex; align-items:center; justify-content:center; font-size:1.6rem; overflow:hidden;
+    display:flex; align-items:center; justify-content:center; font-size:1.1rem; overflow:hidden;
   }
-  .placement-card h4{font-size:0.92rem; margin-bottom:3px; color:#fff;}
-  .placement-card .p-trade{font-size:0.74rem; color:#C7D6E4; margin-bottom:10px;}
+  .placement-card h4{font-size:0.8rem; margin-bottom:2px; color:#fff;}
+  .placement-card .p-trade{font-size:0.66rem; color:#C7D6E4; margin-bottom:8px;}
   .placement-card .p-company{
-    font-size:0.8rem; font-weight:700; color:var(--saffron-soft); padding-top:10px;
+    font-size:0.72rem; font-weight:700; color:var(--saffron-soft); padding-top:8px;
     border-top:1px solid rgba(255,255,255,0.14);
   }
-  .placement-card .p-package{font-size:0.72rem; color:#C7D6E4; margin-top:3px;}
-  .placement-cta{text-align:center; margin-top:40px;}
+  .placement-card .p-package{font-size:0.64rem; color:#C7D6E4; margin-top:2px;}
+  .placement-cta{text-align:center; margin-top:24px;}
   .placement-cta a{
-    display:inline-block; background:var(--saffron); color:#fff; font-weight:700; font-size:0.86rem;
-    padding:12px 28px; border-radius:6px;
+    display:inline-block; background:var(--saffron); color:#fff; font-weight:700; font-size:0.8rem;
+    padding:10px 22px; border-radius:6px;
   }
 
   /* ---------- STAFF TABS (Trades / Group / Common) ---------- */
@@ -420,7 +422,7 @@
     <div class="brand">
       <div class="seal">
         <img src="media/logo.png" alt="College Logo" class="logo-img"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+             onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}">
         <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" style="display:none;"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg>
       </div>
       <div class="brand-text">
@@ -437,6 +439,7 @@
       <a href="#staff-section" class="tab-nav-link" data-tab="tab-group">ग्रुप अनुदेशक</a>
       <a href="#staff-section" class="tab-nav-link" data-tab="tab-common">सामान्य विषय</a>
       <a href="#principal">प्राचार्य</a>
+      <a href="#infrastructure">अवसंरचना</a>
       <a href="#gallery">गैलरी</a>
       <a href="#contact">शिकायत</a>
     </div>
@@ -450,15 +453,16 @@
     <h1 class="hero-float">Govt. Industrial Training Institute<br>Madhubani Sadar</h1>
     <div class="hi-name hero-float">राजकीय औद्योगिक प्रशिक्षण संस्थान, मधुबनी सदर</div>
 
-    <div class="hero-photo">
-      <img class="hero-slide active" src="media/college-building1.jpg" alt="Govt. ITI Madhubani Sadar भवन" onerror="this.style.display='none'; this.parentElement.querySelector('.missing').style.display='flex';">
-      <img class="hero-slide" src="media/college-building2.jpg" alt="Govt. ITI Madhubani Sadar भवन" onerror="this.style.display='none';">
-      <img class="hero-slide" src="media/college-building3.jpg" alt="Govt. ITI Madhubani Sadar भवन" onerror="this.style.display='none';">
-      <div class="missing">कॉलेज भवन की फोटो लगाएं<br><span style="font-size:0.7rem;">media/college-building1.jpg, 2.jpg, 3.jpg</span></div>
-    </div>
-
     <p>NCVT से मान्यता प्राप्त संस्थान, जो युवाओं को उद्योग-केंद्रित ट्रेड प्रशिक्षण, अप्रेंटिसशिप और रोजगार से जुड़े अवसर प्रदान करता है।</p>
   </div>
+
+  <div class="hero-photo">
+    <img class="hero-slide active" src="media/college-building1.jpg" alt="Govt. ITI Madhubani Sadar भवन" onerror="this.style.display='none'; var m=this.parentElement.querySelector('.missing'); if(m){m.style.display='flex';}">
+    <img class="hero-slide" src="media/college-building2.jpg" alt="Govt. ITI Madhubani Sadar भवन" onerror="this.style.display='none';">
+    <img class="hero-slide" src="media/college-building3.jpg" alt="Govt. ITI Madhubani Sadar भवन" onerror="this.style.display='none';">
+    <div class="missing">कॉलेज भवन की फोटो लगाएं<br><span style="font-size:0.7rem;">media/college-building1.jpg, 2.jpg, 3.jpg</span></div>
+  </div>
+
   <div class="stat-strip">
     <div class="wrap">
       <div class="stat"><div class="n">6</div><div class="l">ट्रेड संचालित</div></div>
@@ -586,7 +590,7 @@
 
       <div class="event-card">
         <div class="event-media">
-          <img src="media/event-1.jpg" alt="[कार्यक्रम का नाम]" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <img src="media/event-1.jpg" alt="[कार्यक्रम का नाम]" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}">
           <div class="missing">फोटो लगाएं<br><span style="font-size:0.68rem;">media/event-1.jpg</span></div>
           <div class="event-date-badge">[15/08/2026]</div>
         </div>
@@ -598,7 +602,7 @@
 
       <div class="event-card">
         <div class="event-media">
-          <video muted onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><source src="media/event-2.mp4" type="video/mp4"></video>
+          <video muted onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}"><source src="media/event-2.mp4" type="video/mp4"></video>
           <div class="missing">वीडियो लगाएं<br><span style="font-size:0.68rem;">media/event-2.mp4</span></div>
           <div class="play-badge">Video</div>
           <div class="event-date-badge">[20/05/2025]</div>
@@ -611,7 +615,7 @@
 
       <div class="event-card">
         <div class="event-media">
-          <img src="media/event-3.jpg" alt="[कार्यक्रम का नाम]" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <img src="media/event-3.jpg" alt="[कार्यक्रम का नाम]" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}">
           <div class="missing">फोटो लगाएं<br><span style="font-size:0.68rem;">media/event-3.jpg</span></div>
           <div class="event-date-badge">[11/06/2026]</div>
         </div>
@@ -733,21 +737,21 @@
           <div class="project-strip">
             <div class="project-item">
               <div class="pimg">
-                <img src="media/project-welder1.jpg" alt="सजावटी फूल स्टैंड" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <img src="media/project-welder1.jpg" alt="सजावटी फूल स्टैंड" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}">
                 <div class="missing">फोटो लगाएं<br>project-welder1.jpg</div>
               </div>
               <div class="pcap">सजावटी फूल स्टैंड</div>
             </div>
             <div class="project-item">
               <div class="pimg">
-                <img src="media/project-welder2.jpg" alt="I LOVE WELDER मेटल क्राफ्ट स्टैंड" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <img src="media/project-welder2.jpg" alt="I LOVE WELDER मेटल क्राफ्ट स्टैंड" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}">
                 <div class="missing">फोटो लगाएं<br>project-welder2.jpg</div>
               </div>
               <div class="pcap">I ❤ WELDER मेटल स्टैंड</div>
             </div>
             <div class="project-item">
               <div class="pimg">
-                <img src="media/project-welder3.jpg" alt="Power saw" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <img src="media/project-welder3.jpg" alt="Power saw" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}">
                 <div class="missing">फोटो लगाएं<br>project-welder3.jpg</div>
               </div>
               <div class="pcap">Power saw</div>
@@ -774,14 +778,14 @@
           <div class="project-strip">
             <div class="project-item">
               <div class="pimg">
-                <img src="media/project-fitter1.jpg" alt="Turning" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <img src="media/project-fitter1.jpg" alt="Turning" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}">
                 <div class="missing">फोटो लगाएं<br>project-fitter1.jpg</div>
               </div>
               <div class="pcap">Turning</div>
             </div>
             <div class="project-item">
               <div class="pimg">
-                <img src="media/project-fitter2.jpg" alt="Step Turning" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <img src="media/project-fitter2.jpg" alt="Step Turning" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}">
                 <div class="missing">फोटो लगाएं<br>project-fitter2.jpg</div>
               </div>
               <div class="pcap">Step Turning</div>
@@ -818,14 +822,14 @@
           <div class="project-strip">
             <div class="project-item">
               <div class="pimg">
-                <img src="media/project-electrician1.jpg" alt="wiring" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <img src="media/project-electrician1.jpg" alt="wiring" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}">
                 <div class="missing">फोटो लगाएं<br>project-electrician1.jpg</div>
               </div>
               <div class="pcap">wiring</div>
             </div>
             <div class="project-item">
               <div class="pimg">
-                <img src="media/project-electrician2.jpg" alt="house wiring" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <img src="media/project-electrician2.jpg" alt="house wiring" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}">
                 <div class="missing">फोटो लगाएं<br>project-electrician2.jpg</div>
               </div>
               <div class="pcap">house wiring</div>
@@ -852,14 +856,14 @@
           <div class="project-strip">
             <div class="project-item">
               <div class="pimg">
-                <img src="media/project-electronic-mechanic1.jpg" alt="renewable energy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <img src="media/project-electronic-mechanic1.jpg" alt="renewable energy" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}">
                 <div class="missing">फोटो लगाएं<br>project-electronic-mechanic1.jpg</div>
               </div>
               <div class="pcap">renewable energy</div>
             </div>
             <div class="project-item">
               <div class="pimg">
-                <img src="media/project-electronic-mechanic2.jpg" alt="workshop" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <img src="media/project-electronic-mechanic2.jpg" alt="workshop" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}">
                 <div class="missing">फोटो लगाएं<br>project-electronic-mechanic2.jpg</div>
               </div>
               <div class="pcap">workshop</div>
@@ -896,14 +900,14 @@
           <div class="project-strip">
             <div class="project-item">
               <div class="pimg">
-                <img src="media/project-diesel-mechanic1.jpg" alt="6 cylinder engine" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <img src="media/project-diesel-mechanic1.jpg" alt="6 cylinder engine" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}">
                 <div class="missing">फोटो लगाएं<br>project-diesel-mechanic1.jpg</div>
               </div>
               <div class="pcap">6 cylinder engine</div>
             </div>
             <div class="project-item">
               <div class="pimg">
-                <img src="media/project-diesel-mechanic2.jpg" alt="4 cylinder engine" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <img src="media/project-diesel-mechanic2.jpg" alt="4 cylinder engine" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}">
                 <div class="missing">फोटो लगाएं<br>project-diesel-mechanic2.jpg</div>
               </div>
               <div class="pcap">4 cylinder engine</div>
@@ -930,14 +934,14 @@
           <div class="project-strip">
             <div class="project-item">
               <div class="pimg">
-                <img src="media/project-ictsm1.jpg" alt="mother board repairing" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <img src="media/project-ictsm1.jpg" alt="mother board repairing" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}">
                 <div class="missing">फोटो लगाएं<br>project-ictsm1.jpg</div>
               </div>
               <div class="pcap">mother board repairing</div>
             </div>
             <div class="project-item">
               <div class="pimg">
-                <img src="media/project-ictsm2.jpg" alt="system troubleshooting" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <img src="media/project-ictsm2.jpg" alt="system troubleshooting" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}">
                 <div class="missing">फोटो लगाएं<br>project-ictsm2.jpg</div>
               </div>
               <div class="pcap">system troubleshooting</div>
@@ -1012,7 +1016,7 @@
     <div class="principal-inner">
       <div class="principal-photo">
         <img src="media/principal.jpg" alt="Principal Photo"
-             onerror="this.style.display='none'; this.parentElement.querySelector('.missing').style.display='flex';">
+             onerror="this.style.display='none'; var m=this.parentElement.querySelector('.missing'); if(m){m.style.display='flex';}">
         <div class="missing" style="display:none; position:absolute; inset:0; align-items:center; justify-content:center; flex-direction:column; padding:20px; text-align:center;">
           प्राचार्य की फोटो यहाँ लगाएं<br><span style="font-size:0.72rem; margin-top:6px;">फ़ाइल का नाम: media/principal.jpg</span>
         </div>
@@ -1024,6 +1028,52 @@
         <blockquote>"हमारा प्रयास है कि प्रत्येक प्रशिक्षणार्थी अनुशासन, कौशल और आत्मविश्वास के साथ संस्थान से निकले और उद्योग जगत में अपनी पहचान बनाए।</blockquote>
         <p><b>About:</b>M.Tech in Automobile engineering, ex INDIAN ARMY</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INFRASTRUCTURE / WORKSHOP ============ -->
+<section class="infrastructure" id="infrastructure" style="background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-eyebrow">Infrastructure</span>
+      <h2>अवसंरचना एवं कार्यशाला</h2>
+      <p>संस्थान की वर्कशॉप, मशीनें, कक्षाएं व अन्य सुविधाओं की झलक — फोटो/वीडियो पर क्लिक करें।</p>
+      <span class="edit-note">नीचे दी गई फोटो/वीडियो को अपने संस्थान की वास्तविक फोटो से बदलें</span>
+    </div>
+    <div class="gal-grid" id="infraGrid">
+
+      <div class="gal-item" data-cat="infra">
+        <img src="media/welding-shop1.jpg" alt="वेल्डिंग वर्कशॉप" onerror="this.style.display='none'; var m=this.parentElement.querySelector('.missing'); if(m){m.style.display='flex';}">
+        <div class="missing">वेल्डिंग वर्कशॉप<br><span style="font-size:0.68rem;">media/welding-shop1.jpg</span></div>
+      </div>
+
+      <div class="gal-item" data-cat="infra">
+        <img src="media/machine-shop1.jpg" alt="मशीन शॉप" onerror="this.style.display='none'; var m=this.parentElement.querySelector('.missing'); if(m){m.style.display='flex';}">
+        <div class="missing">मशीन शॉप<br><span style="font-size:0.68rem;">media/machine-shop1.jpg</span></div>
+      </div>
+
+      <div class="gal-item video" data-cat="infra">
+        <video muted onerror="this.style.display='none'; var m=this.parentElement.querySelector('.missing'); if(m){m.style.display='flex';}"><source src="media/workshop-tour.mp4" type="video/mp4"></video>
+        <div class="missing">वर्कशॉप टूर वीडियो<br><span style="font-size:0.68rem;">media/workshop-tour.mp4</span></div>
+        <div class="play-badge">Video</div>
+      </div>
+
+      <div class="gal-item" data-cat="infra">
+        <img src="media/classroom1.jpg" alt="कक्षा" onerror="this.style.display='none'; var m=this.parentElement.querySelector('.missing'); if(m){m.style.display='flex';}">
+        <div class="missing">कक्षा<br><span style="font-size:0.68rem;">media/classroom1.jpg</span></div>
+      </div>
+
+      <div class="gal-item" data-cat="infra">
+        <img src="media/library1.jpg" alt="पुस्तकालय" onerror="this.style.display='none'; var m=this.parentElement.querySelector('.missing'); if(m){m.style.display='flex';}">
+        <div class="missing">पुस्तकालय<br><span style="font-size:0.68rem;">media/library1.jpg</span></div>
+      </div>
+
+      <div class="gal-item" data-cat="infra">
+        <img src="media/tool-room1.jpg" alt="टूल रूम / स्टोर" onerror="this.style.display='none'; var m=this.parentElement.querySelector('.missing'); if(m){m.style.display='flex';}">
+        <div class="missing">टूल रूम / स्टोर<br><span style="font-size:0.68rem;">media/tool-room1.jpg</span></div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1047,44 +1097,44 @@
     <div class="gal-grid" id="galGrid">
 
       <div class="gal-item" data-cat="workshop">
-        <img src="media/workshop1.jpg" alt="वर्कशॉप फोटो 1" onerror="this.style.display='none'; this.parentElement.querySelector('.missing').style.display='flex';">
+        <img src="media/workshop1.jpg" alt="वर्कशॉप फोटो 1" onerror="this.style.display='none'; var m=this.parentElement.querySelector('.missing'); if(m){m.style.display='flex';}">
         <div class="missing">वर्कशॉप फोटो 1<br><span style="font-size:0.68rem;">media/workshop1.jpg</span></div>
       </div>
 
       <div class="gal-item" data-cat="workshop">
-        <img src="media/workshop2.jpg" alt="वर्कशॉप फोटो 2" onerror="this.style.display='none'; this.parentElement.querySelector('.missing').style.display='flex';">
+        <img src="media/workshop2.jpg" alt="वर्कशॉप फोटो 2" onerror="this.style.display='none'; var m=this.parentElement.querySelector('.missing'); if(m){m.style.display='flex';}">
         <div class="missing">वर्कशॉप फोटो 2<br><span style="font-size:0.68rem;">media/workshop2.jpg</span></div>
       </div>
 
       <div class="gal-item video" data-cat="video">
-        <video muted onerror="this.style.display='none'; this.parentElement.querySelector('.missing').style.display='flex';"><source src="media/event1.mp4" type="video/mp4"></video>
+        <video muted onerror="this.style.display='none'; var m=this.parentElement.querySelector('.missing'); if(m){m.style.display='flex';}"><source src="media/event1.mp4" type="video/mp4"></video>
         <div class="missing">कार्यक्रम वीडियो<br><span style="font-size:0.68rem;">media/event1.mp4</span></div>
         <div class="play-badge">Video</div>
       </div>
 
       <div class="gal-item" data-cat="placement">
-        <img src="media/placement1.jpg" alt="प्लेसमेंट फोटो" onerror="this.style.display='none'; this.parentElement.querySelector('.missing').style.display='flex';">
+        <img src="media/placement1.jpg" alt="प्लेसमेंट फोटो" onerror="this.style.display='none'; var m=this.parentElement.querySelector('.missing'); if(m){m.style.display='flex';}">
         <div class="missing">प्लेसमेंट फोटो<br><span style="font-size:0.68rem;">media/placement1.jpg</span></div>
       </div>
 
       <div class="gal-item" data-cat="event">
-        <img src="media/campus1.jpg" alt="भवन / परिसर" onerror="this.style.display='none'; this.parentElement.querySelector('.missing').style.display='flex';">
+        <img src="media/campus1.jpg" alt="भवन / परिसर" onerror="this.style.display='none'; var m=this.parentElement.querySelector('.missing'); if(m){m.style.display='flex';}">
         <div class="missing">भवन / परिसर<br><span style="font-size:0.68rem;">media/campus1.jpg</span></div>
       </div>
 
       <div class="gal-item" data-cat="workshop">
-        <img src="media/workshop3.jpg" alt="प्रशिक्षण सत्र" onerror="this.style.display='none'; this.parentElement.querySelector('.missing').style.display='flex';">
+        <img src="media/workshop3.jpg" alt="प्रशिक्षण सत्र" onerror="this.style.display='none'; var m=this.parentElement.querySelector('.missing'); if(m){m.style.display='flex';}">
         <div class="missing">प्रशिक्षण सत्र<br><span style="font-size:0.68rem;">media/workshop3.jpg</span></div>
       </div>
 
       <div class="gal-item video" data-cat="video">
-        <video muted onerror="this.style.display='none'; this.parentElement.querySelector('.missing').style.display='flex';"><source src="media/induction1.mp4" type="video/mp4"></video>
+        <video muted onerror="this.style.display='none'; var m=this.parentElement.querySelector('.missing'); if(m){m.style.display='flex';}"><source src="media/induction1.mp4" type="video/mp4"></video>
         <div class="missing">इंडक्शन वीडियो<br><span style="font-size:0.68rem;">media/induction1.mp4</span></div>
         <div class="play-badge">Video</div>
       </div>
 
       <div class="gal-item" data-cat="event">
-        <img src="media/event2.jpg" alt="सांस्कृतिक कार्यक्रम" onerror="this.style.display='none'; this.parentElement.querySelector('.missing').style.display='flex';">
+        <img src="media/event2.jpg" alt="सांस्कृतिक कार्यक्रम" onerror="this.style.display='none'; var m=this.parentElement.querySelector('.missing'); if(m){m.style.display='flex';}">
         <div class="missing">सांस्कृतिक कार्यक्रम<br><span style="font-size:0.68rem;">media/event2.jpg</span></div>
       </div>
 
@@ -1193,6 +1243,30 @@
         lightbox.classList.add('open');
       }
       // if neither loaded, do nothing (placeholder text is shown instead)
+    });
+  });
+
+  // ----- Infrastructure/Workshop photos & videos also open in lightbox -----
+  var infraItems = document.querySelectorAll('#infraGrid .gal-item');
+  infraItems.forEach(function(item){
+    item.addEventListener('click', function(){
+      var img = item.querySelector('img');
+      var videoEl = item.querySelector('video');
+      lightboxInner.innerHTML = '';
+      if(img && img.style.display !== 'none' && img.complete && img.naturalWidth > 0){
+        var bigImg = document.createElement('img');
+        bigImg.src = img.src;
+        bigImg.alt = img.alt;
+        lightboxInner.appendChild(bigImg);
+        lightbox.classList.add('open');
+      } else if(videoEl && videoEl.style.display !== 'none' && videoEl.querySelector('source')){
+        var bigVideo = document.createElement('video');
+        bigVideo.src = videoEl.querySelector('source').src;
+        bigVideo.controls = true;
+        bigVideo.autoplay = true;
+        lightboxInner.appendChild(bigVideo);
+        lightbox.classList.add('open');
+      }
     });
   });
 
